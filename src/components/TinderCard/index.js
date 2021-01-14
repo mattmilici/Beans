@@ -69,7 +69,7 @@ function TinderApp() {
 					>
 						<div
 							style={{ backgroundImage: "url(" + character.url + ")" }}
-							className="relative bg-center bg-cover flex items-center justify-center w-10/12 md:w-8/12 h-56 shadow-2xl"
+							className="relative rounded-lg bg-center bg-cover flex items-center justify-center w-10/12 md:w-8/12 h-56 shadow-2xl"
 						>
 							<h3 className="text-3xl">{character.name}</h3>
 						</div>
