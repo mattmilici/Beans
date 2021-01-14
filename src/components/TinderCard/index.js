@@ -31,13 +31,16 @@ const db = [
 	},
 ];
 
-function Simple() {
+function TinderApp() {
 	const characters = db;
 	const [lastDirection, setLastDirection] = useState();
+	const [lastName, setLastName] = useState();
 
 	const swiped = (direction, nameToDelete) => {
 		console.log("removing: " + nameToDelete);
 		setLastDirection(direction);
+		// setLastName(character.name);
+		setLastName(nameToDelete);
 	};
 
 	const outOfFrame = (name) => {
@@ -54,11 +57,11 @@ function Simple() {
 				href="https://fonts.googleapis.com/css?family=Alatsi&display=swap"
 				rel="stylesheet"
 			/>
-			<h1>React Tinder Card</h1>
-			<div className="cardContainer w-8/12 h-64 flex items-center justify-center m-auto">
+			<h1 className="text-black text-4xl">Daily Beans Tracker</h1>
+			<div className="cardContainer w-11/12 md:w-8/12 h-64 flex items-center justify-center m-auto">
 				{characters.map((character) => (
 					<TinderCard
-						className="swipe absolute flex items-center justify-center w-6/12 h-56 text-white text-lg"
+						className="swipe absolute flex items-center justify-center w-10/12 md:w-6/12 h-56 text-white text-lg "
 						shadow-xl
 						key={character.name}
 						onSwipe={(dir) => swiped(dir, character.name)}
@@ -66,16 +69,16 @@ function Simple() {
 					>
 						<div
 							style={{ backgroundImage: "url(" + character.url + ")" }}
-							className="relative bg-center bg-cover flex items-center justify-center w-6/12 h-56"
+							className="relative bg-center bg-cover flex items-center justify-center w-10/12 md:w-8/12 h-56 shadow-2xl"
 						>
-							<h3>{character.name}</h3>
+							<h3 className="text-3xl">{character.name}</h3>
 						</div>
 					</TinderCard>
 				))}
 			</div>
 			{lastDirection ? (
 				<h2 className="infoText w-full h-5 flex justify-center flex">
-					You swiped {lastDirection}
+					You swiped {lastDirection} for {lastName}
 				</h2>
 			) : (
 				<h2 className="infoText w-full h-5 flex justify-center flex" />
@@ -84,4 +87,4 @@ function Simple() {
 	);
 }
 
-export default Simple;
+export default TinderApp;
