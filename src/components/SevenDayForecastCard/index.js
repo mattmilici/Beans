@@ -7,30 +7,31 @@ function SevenDayForecastCard() {
 	const responsive = {
 		desktop: {
 			breakpoint: { max: 3000, min: 1024 },
-			items: 3,
-			slidesToSlide: 3, // optional, default to 1.
+			items: 4.3,
+			slidesToSlide: 3.3, // optional, default to 1.
 		},
 		tablet: {
 			breakpoint: { max: 1024, min: 464 },
-			items: 2,
-			slidesToSlide: 2, // optional, default to 1.
+			items: 2.3,
+			slidesToSlide: 2.3, // optional, default to 1.
 		},
 		mobile: {
 			breakpoint: { max: 464, min: 0 },
-			items: 1,
-			slidesToSlide: 1, // optional, default to 1.
+			items: 1.3,
+			slidesToSlide: 1.3, // optional, default to 1.
 		},
 	};
 	return (
 		<div>
-			<h1 className="text-black text-4xl">Seven Day Historicals</h1>
+			<h1 className="text-black text-4xl mb-6 mt-10">Seven Day Historicals</h1>
 			<Carousel
+				className="m-auto"
 				swipeable={true}
 				draggable={true}
 				showDots={false}
 				responsive={responsive}
 				ssr={true} // means to render carousel on server-side.
-				infinite={true}
+				infinite={false}
 				// autoPlay={this.props.deviceType !== "mobile" ? true : false}
 				autoPlaySpeed={1000}
 				keyBoardControl={true}
@@ -42,25 +43,26 @@ function SevenDayForecastCard() {
 				dotListClass="custom-dot-list-style"
 				// itemClass="carousel-item-padding-20-px"
 			>
-				<div>
-					1
-					<Test />
+				<div className="m-auto">
+					<Test day="Monday" overall="Good!" PercentageGood="60%" />
 				</div>
-				<div>
-					2
-					<Test />
+				<div className="">
+					<Test day="Tuesday" overall="Bad!" PercentageGood="49%" />
 				</div>
-				<div>
-					3
-					<Test />
+				<div className="">
+					<Test day="Wednesday" overall="Bad!" PercentageGood="30%" />
 				</div>
-				<div>
-					4
-					<Test />
+				<div className="">
+					<Test day="Thursday" overall="Good!" PercentageGood="76%" />
 				</div>
-				<div>
-					5
-					<Test />
+				<div className="">
+					<Test day="Friday" overall="Good!" PercentageGood="89%" />
+				</div>
+				<div className="">
+					<Test day="Saturday" overall="Good!" PercentageGood="51%" />
+				</div>
+				<div className="">
+					<Test day="Sunday" overall="Bad!" PercentageGood="46%" />
 				</div>
 			</Carousel>
 		</div>

@@ -2,12 +2,15 @@ import React, { useState } from "react";
 
 function HistoricalCard(props) {
 	return (
-		<div className="w-6/12 h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+		<div className="w-8/12 md:w-6/12 h-64 bg-gray-200 rounded-lg flex items-center justify-center m-auto">
 			<div>
-				<h1>Monday</h1>
-				<h1>Overall: Good day!</h1>
-				<h1>Swiped Right: Work, Family, Friends</h1>
-				<h1>Swiped Left: Fitness, Eating</h1>
+				<h1 className="text-2xl font-bold">{props.day}</h1>
+				<h1 className="">
+					Overall: <span className="text-2xl">{props.overall}</span>
+				</h1>
+				<h1 className="text-4xl">
+					{props.PercentageGood} <span className="text-2xl">Good!</span>{" "}
+				</h1>
 			</div>
 		</div>
 	);

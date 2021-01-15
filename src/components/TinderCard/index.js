@@ -7,8 +7,13 @@ import EatImg from "./images/eat.jpg";
 import FamilyImg from "./images/family.jpg";
 import FitnessImg from "./images/fitness.jpg";
 import FriendsImg from "./images/friends.jpg";
+import OverallImg from "./images/overall.jpg";
 
 const db = [
+	{
+		name: "Overall",
+		url: OverallImg,
+	},
 	{
 		name: "Work",
 		url: WorkImg,
@@ -57,11 +62,11 @@ function TinderApp() {
 				href="https://fonts.googleapis.com/css?family=Alatsi&display=swap"
 				rel="stylesheet"
 			/>
-			<h1 className="text-black text-4xl">Daily Beans Tracker</h1>
-			<div className="cardContainer w-11/12 md:w-8/12 h-64 flex items-center justify-center m-auto">
+			<h1 className="text-black text-4xl mb-6">Daily Beans</h1>
+			<div className="cardContainer w-11/12 md:w-6/12 h-64 flex items-center justify-center m-auto">
 				{characters.map((character) => (
 					<TinderCard
-						className="swipe absolute flex items-center justify-center w-10/12 md:w-6/12 h-56 text-white text-lg "
+						className="swipe absolute flex items-center justify-center w-10/12 md:w-64 h-64 text-white text-lg shadow-4xl"
 						shadow-xl
 						key={character.name}
 						onSwipe={(dir) => swiped(dir, character.name)}
@@ -69,7 +74,7 @@ function TinderApp() {
 					>
 						<div
 							style={{ backgroundImage: "url(" + character.url + ")" }}
-							className="relative rounded-lg bg-center bg-cover flex items-center justify-center w-10/12 md:w-8/12 h-56 shadow-2xl"
+							className="relative rounded-lg bg-center bg-cover flex items-center justify-center w-10/12 md:w-64 h-64 "
 						>
 							<h3 className="text-3xl">{character.name}</h3>
 						</div>
