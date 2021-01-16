@@ -14,6 +14,16 @@ function Summary() {
 				<h1 className="text-left text-4xl">Welcome</h1>
 				<h1 className="text-left text-4xl">Matt</h1>
 			</div>
+			<div className="flex justify-end py-6 px-4">
+				<div className="pb-4  w-1/2 h-34 w-24 rounded-full ">
+					<h1 className=" text-8xl w-full text-right">83%</h1>
+					<div className="flex justify-end">
+						<h1 className="text-right text-md w-5/6">
+							Overall Good Day Percentage
+						</h1>
+					</div>
+				</div>
+			</div>
 			<div className="mb-12">
 				<div className="my-6 m-auto flex-shrink-0 rounded-md">
 					<h1 className="test-3xl pb-3">You've got some Beans waiting</h1>
