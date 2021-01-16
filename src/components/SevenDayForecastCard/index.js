@@ -12,12 +12,12 @@ function SevenDayForecastCard() {
 		},
 		tablet: {
 			breakpoint: { max: 1024, min: 464 },
-			items: 2.3,
+			items: 3.3,
 			slidesToSlide: 2.3, // optional, default to 1.
 		},
 		mobile: {
 			breakpoint: { max: 464, min: 0 },
-			items: 1.3,
+			items: 2.3,
 			slidesToSlide: 1.3, // optional, default to 1.
 		},
 	};
@@ -36,7 +36,7 @@ function SevenDayForecastCard() {
 				autoPlaySpeed={1000}
 				keyBoardControl={true}
 				customTransition="all .5"
-				transitionDuration={500}
+				transitionDuration={50}
 				containerClass="carousel-container"
 				removeArrowOnDeviceType={["tablet", "mobile"]}
 				// deviceType={this.props.deviceType}
