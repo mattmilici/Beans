@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import MetricCard from "../MetricCard/index";
-
-function test() {
-	console.log("test");
-}
+import { PageContext } from "../../PageContext";
 
 function Summary() {
+	const { finalCard, setfinalCard } = useContext(PageContext);
+
+	function test() {
+		setfinalCard(false);
+	}
 	return (
 		<div className=" my-2 mx-2 md:my-10 md:mx-16">
 			<div className="pb-4">

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-// import TinderCard from '../react-tinder-card/index'
+import React, { useState, useContext } from "react";
 import TinderCard from "react-tinder-card";
 import Summary from "../Summary/index.js";
 
@@ -9,6 +8,8 @@ import FamilyImg from "./images/family.jpg";
 import FitnessImg from "./images/fitness.jpg";
 import FriendsImg from "./images/friends.jpg";
 import OverallImg from "./images/overall.jpg";
+
+import { PageContext } from "../../PageContext";
 
 const db = [
 	{
@@ -41,14 +42,14 @@ function TinderApp() {
 	const characters = db;
 	const [lastDirection, setLastDirection] = useState();
 	const [lastName, setLastName] = useState();
-	const [finalCard, setfinalCard] = useState(true);
+	const { finalCard, setfinalCard } = useContext(PageContext);
 
 	const swiped = (direction, nameToDelete) => {
 		console.log("removing: " + nameToDelete);
 		setLastDirection(direction);
 		setLastName(nameToDelete);
 		if (nameToDelete === "Overall") {
-			setfinalCard(false);
+			setfinalCard(true);
 		}
 	};
 
