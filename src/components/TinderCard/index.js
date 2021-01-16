@@ -41,14 +41,14 @@ function TinderApp() {
 	const characters = db;
 	const [lastDirection, setLastDirection] = useState();
 	const [lastName, setLastName] = useState();
-	const [finalCard, setfinalCard] = useState(false);
+	const [finalCard, setfinalCard] = useState(true);
 
 	const swiped = (direction, nameToDelete) => {
 		console.log("removing: " + nameToDelete);
 		setLastDirection(direction);
 		setLastName(nameToDelete);
 		if (nameToDelete === "Overall") {
-			setfinalCard(true);
+			setfinalCard(false);
 		}
 	};
 
