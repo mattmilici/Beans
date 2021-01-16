@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import MetricCard from "../MetricCard/index";
 
+function test() {
+	console.log("test");
+}
+
 function Summary() {
 	return (
 		<div className=" my-2 mx-2 md:my-10 md:mx-16">
@@ -12,8 +16,9 @@ function Summary() {
 				<div className="my-6 m-auto flex-shrink-0 rounded-md">
 					<h1 className="test-3xl pb-3">You've got some Beans waiting</h1>
 					<button
+						onClick={test}
 						type="button"
-						class="w-1/2 m-auto bg-indigo-600 px-4 py-2 border border-transparent rounded-md shadow-lg flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2  focus:ring-indigo-500 sm:w-auto sm:inline-flex"
+						className="w-1/2 m-auto bg-indigo-600 px-4 py-2 border border-transparent rounded-md shadow-lg flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2  focus:ring-indigo-500 sm:w-auto sm:inline-flex"
 					>
 						Today's Beans
 					</button>
