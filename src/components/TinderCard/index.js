@@ -1,6 +1,10 @@
 import React, { useState, useContext } from "react";
+import Moment from "react-moment";
+import "moment-timezone";
+
 import TinderCard from "react-tinder-card";
 import Summary from "../Summary/index.js";
+import BeanTracker from "../BeanTracker/index.js";
 
 import WorkImg from "./images/work.jpg";
 import EatImg from "./images/eat.jpg";
@@ -44,7 +48,21 @@ function TinderApp() {
 	const [lastName, setLastName] = useState();
 	const { finalCard, setfinalCard } = useContext(PageContext);
 
+	const [GoodArray, setGoodArray] = useState([]);
+	const [BadArray, setBadArray] = useState([]);
+
+	///figure out how to remove this global variable
+	var GoodArrayHolder = [];
+	var BadArrayHolder = [];
+
 	const swiped = (direction, nameToDelete) => {
+		if (direction === "left") {
+			BadArrayHolder.push(nameToDelete);
+			setBadArray(BadArrayHolder);
+		} else {
+			GoodArrayHolder.push(nameToDelete);
+			setGoodArray(GoodArrayHolder);
+		}
 		console.log("removing: " + nameToDelete);
 		setLastDirection(direction);
 		setLastName(nameToDelete);
@@ -71,7 +89,19 @@ function TinderApp() {
 						href="https://fonts.googleapis.com/css?family=Alatsi&display=swap"
 						rel="stylesheet"
 					/>
-					<h1 className="text-black text-4xl mb-6">Daily Beans</h1>
+					<div className="mt-4 mb-6 border-b-2 mx-3">
+						<Moment
+							className="block text-3xl"
+							format="dddd "
+							element="span"
+						></Moment>
+						<Moment
+							className="block text-3xl"
+							format="MMMM d, YYYY"
+							element="span"
+						></Moment>
+					</div>
+					<h1 className="text-black text-2xl mb-2">Daily Beans</h1>
 					<div className="cardContainer w-11/12 md:w-6/12 h-64 flex items-center justify-center m-auto">
 						{characters.map((character) => (
 							<TinderCard
@@ -97,6 +127,7 @@ function TinderApp() {
 					) : (
 						<h2 className="infoText w-full h-5 flex justify-center flex" />
 					)}
+					<BeanTracker GoodArray={GoodArray} BadArray={BadArray} />
 				</div>
 			)}
 		</div>
