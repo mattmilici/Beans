@@ -28,7 +28,7 @@ function SevenDayForecastCard() {
 				className="m-auto"
 				swipeable={true}
 				draggable={true}
-				showDots={false}
+				showDots={true}
 				responsive={responsive}
 				ssr={true} // means to render carousel on server-side.
 				infinite={false}
