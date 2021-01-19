@@ -18,7 +18,7 @@ function Summary() {
 				</div>
 				<div className="flex justify-end py-6 px-4">
 					<div className="pb-4  w-1/2 h-34 w-24 rounded-full ">
-						<h1 className=" text-8xl w-full text-right">83%</h1>
+						<h1 className=" text-6xl w-full text-right">83%</h1>
 						<div className="flex justify-end">
 							<h1 className="text-right text-md w-5/6">Swipe right rate</h1>
 						</div>
